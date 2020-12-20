@@ -1,0 +1,118 @@
+{
+	"errcode": 0,
+	"data": {
+		"0": [
+			{
+				"sort": 0,
+				"label": "select",
+				"type": "",
+				"name": "location",
+				"title": "所在城市",
+				"placeholder": "请选择所在城市",
+				"required": true,
+				"requiredMessage": "请选择所在城市",
+				"ruleType": "notnull",
+				"checkRule": "",
+				"ruleMessage": "请选择所在城市",
+				"option": ["北京","上海","广州","深圳"],
+				"mode": "selector",
+				"index": 0
+			},
+			{
+				"sort":1,
+				"label": "input",
+				"type": "",
+				"name": "money",
+				"title": "税前月薪",
+				"placeholder": "请填写税前月薪",
+				"maxLength": 20,
+				"required": true,
+				"requiredMessage": "请填写税前月薪",
+				"ruleType": "number",
+				"checkRule": "",
+				"ruleMessage": "税前月薪必须为数字" ,
+				"index":1
+			}
+		],
+		"1": [
+			{
+				"sort": 0,
+				"label": "select",
+				"type": "",
+				"name": "location",
+				"title": "所在城市",
+				"placeholder": "请选择所在城市",
+				"required": true,
+				"requiredMessage": "请选择所在城市",
+				"ruleType": "notnull",
+				"checkRule": "",
+				"ruleMessage": "请选择所在城市",
+				"option": ["北京","上海","广州","深圳"],
+				"mode": "selector",
+				"index": 2
+			},
+			{
+				"sort":1,
+				"label": "input",
+				"type": "",
+				"name": "before_money",
+				"title": "税后期望月薪",
+				"placeholder": "请填写税后期望月薪",
+				"maxLength": 20,
+				"required": true,
+				"requiredMessage": "请填写税后期望月薪",
+				"ruleType": "number",
+				"checkRule": "",
+				"ruleMessage": "税后期望月薪必须为数字" ,
+				"index":3
+			}
+		],
+		"2": [
+			{
+				"sort": 0,
+				"label": "select",
+				"type": "",
+				"name": "location",
+				"title": "所在城市",
+				"placeholder": "请选择所在城市",
+				"required": true,
+				"requiredMessage": "请选择所在城市",
+				"ruleType": "notnull",
+				"checkRule": "",
+				"ruleMessage": "请选择所在城市",
+				"option": ["北京","上海","广州","深圳"],
+				"mode": "selector",
+				"index": 1
+			},{
+				"sort":1,
+				"label": "input",
+				"type": "",
+				"name": "befor_money",
+				"title": "税前月薪",
+				"placeholder": "请填写税前月薪",
+				"maxLength": 20,
+				"required": true,
+				"requiredMessage": "请填写税前月薪",
+				"ruleType": "number",
+				"checkRule": "",
+				"ruleMessage": "税前月薪必须为数字" ,
+				"index":5
+			},
+			{
+				"sort":2,
+				"label": "input",
+				"type": "",
+				"name": "final_money",
+				"title": "税前年终奖",
+				"placeholder": "请填写税前月薪",
+				"maxLength": 20,
+				"required": true,
+				"requiredMessage": "请填写税前月薪",
+				"ruleType": "number",
+				"checkRule": "",
+				"ruleMessage": "税前月薪必须为数字" ,
+				"index":6
+			}
+		]
+	}
+}

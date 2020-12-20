@@ -1,0 +1,21 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "工资计算器"
+			}
+		},
+		{
+			"path": "pages/results/results",
+			"style": {
+				"navigationBarTitleText": "工资计算器"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#E34451",
+		"backgroundColor": "#F8F8F8",
+		"navigationBarTextStyle": "white"
+	}
+}
