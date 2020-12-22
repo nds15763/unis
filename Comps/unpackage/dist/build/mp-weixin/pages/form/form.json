@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "工资计算器",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "active-form": "/components/active_form"
+  }
+}

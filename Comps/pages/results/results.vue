@@ -24,12 +24,12 @@
 </template>
 
 <script>
-	import tTable from '../../compose/t-table/t-table.vue';
-	import tTh from '../../compose/t-table/t-th.vue';
-	import tTr from '../../compose/t-table/t-tr.vue';
-	import tTd from '../../compose/t-table/t-td.vue';
+	import tTable from '../../components/t-table/t-table.vue';
+	import tTh from '../../components/t-table/t-th.vue';
+	import tTr from '../../components/t-table/t-tr.vue';
+	import tTd from '../../components/t-table/t-td.vue';
 
-	import uCharts from '../../compose/u-charts.js';
+	import uCharts from '../../components/u-charts.js';
 	var _self;
 	var canvaPie = null;
 
@@ -69,18 +69,8 @@
 				if (value == null) {
 					return
 				}
-				switch (value.type) {
-					case 0:
-						{
-							debugger
-							this.setTax(18000)
-							_self.showPie("canvasPie", this.tableList);
-						}
-					case 1:
-						{}
-					case 2:
-						{}
-				}
+				this.setTax(value)
+				_self.showPie("canvasPie", this.tableList);
 			},
 			setShuiQianData() {
 				//个人公积金系数
@@ -126,23 +116,28 @@
 					}
 				});
 			},
-			setTax(income) {//设置图表内容
+			setTax(data) {//设置图表内容
 				var sqsr = 0 //税后收入
 				var shsr = 0 //税前收入
 				var grsbjf = 0 //个人社保缴费
 				var gjjjf = 0 //公积金缴费
+				var gjjbl = 0.08 //公积金比率
 				var grsds = 0 //个人所得税
 				var ylbxbl = 0.08 //养老保险比例 8%
 				var yilbxbl = 0.02 //医疗保险比例 2%
 				var sybxbl = 0.02 //失业保险比例 2%
 				var zfgjjbl = 0.08 //住房公积金比例 8%
+				debugger
+				if (data.percent!="" && parseFloat(data.percent) !=0){
+					gjjbl = parseFloat(data.percent)/100
+				}
 
 				//税前收入
-				shsr = income
+				shsr = data.income
 				//个人社保缴费 = 养老保险(y*8%)+医疗保险(y*2%)+失业保险(y*2%)
-				grsbjf = income * ylbxbl + income * yilbxbl + income * sybxbl
+				grsbjf = data.income * ylbxbl + data.income * yilbxbl + data.income * sybxbl
 				//公积金缴费(住房公积金比例 8%)可变
-				gjjjf = income * 0.08
+				gjjjf = data.income * gjjbl
 				//个人所得税
 				grsds = this.sbjf(shsr)
 				//税后收入=税前收入-(个人社保缴费+公积金缴费)-个人所得税
@@ -151,22 +146,22 @@
 				this.tableList = {
 					series: [{
 							"name": "税后月薪",
-							"data": sqsr,
+							"data": parseFloat(sqsr.toFixed(2)),
 							"percent": ((sqsr / shsr) * 100).toFixed(2)
 						},
 						{
 							"name": '住房公积金',
-							"data": gjjjf,
+							"data": parseFloat(gjjjf.toFixed(2)),
 							"percent": ((gjjjf / shsr) * 100).toFixed(2)
 						},
 						{
 							"name": '个人所得税',
-							"data": grsds,
+							"data": parseFloat(grsds.toFixed(2)),
 							"percent": ((grsds / shsr) * 100).toFixed(2)
 						},
 						{
 							"name": '社会保险',
-							"data": grsbjf,
+							"data": parseFloat(grsbjf.toFixed(2)),
 							"percent": ((grsbjf / shsr) * 100).toFixed(2)
 						}
 					]

@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/form/form",
+    "pages/results/results"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#E34451",
+    "backgroundColor": "#F8F8F8"
+  },
+  "permission": {},
+  "usingComponents": {}
+}

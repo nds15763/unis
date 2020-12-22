@@ -1,5 +1,5 @@
 {
-    "name" : "Comp",
+    "name" : "工资计算小程序",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -8,8 +8,6 @@
     /* 5+App特有相关 */
     "app-plus" : {
         "usingComponents" : true,
-        "nvueCompiler" : "uni-app",
-        "compilerVersion" : 3,
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
             "waiting" : true,
@@ -17,7 +15,9 @@
             "delay" : 0
         },
         /* 模块配置 */
-        "modules" : {},
+        "modules" : {
+            "VideoPlayer" : {}
+        },
         /* 应用发布信息 */
         "distribute" : {
             /* android打包配置 */
@@ -57,11 +57,15 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx554bb120a680f484",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "es6" : false,
+            "postcss" : false,
+            "minified" : false
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "permission" : {}
     },
     "mp-alipay" : {
         "usingComponents" : true
@@ -72,7 +76,17 @@
     "mp-toutiao" : {
         "usingComponents" : true
     },
-    "uniStatistics": {  
-        "enable": false
+    "h5" : {
+        "devServer" : {
+            "port" : 17072,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/dpc" : {
+                    "target" : "http://47.104.110.49",
+                    "changeOrigin" : true,
+                    "secure" : false
+                }
+            }
+        }
     }
 }
